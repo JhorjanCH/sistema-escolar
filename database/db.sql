@@ -52,8 +52,6 @@ CREATE TABLE personas (
     FOREIGN KEY (usuario_id) REFERENCES usuarios (id_usuario) on delete no action on update cascade
 
 )ENGINE=InnoDB;
-INSERT INTO personas (usuario_id,nombres,apellidos,ci,fecha_nacimiento,profesion,direccion,celular,fyh_creacion,estado)
-VALUES('1','ADMIN','PRINCIPAL','0000000','2024-11-21','ADMIN','ADMIN','000000000','2024-11-21 4:07:20','1')
 
 CREATE TABLE administrativos (
 
@@ -69,7 +67,6 @@ CREATE TABLE administrativos (
 
 )ENGINE=InnoDB;
 INSERT INTO administrativos (persona_id,fyh_creacion,estado)
-VALUES('1','2024-11-21 4:07:20','1')
 
 CREATE TABLE docentes (
 
