@@ -29,7 +29,7 @@ foreach ($instituciones as $institucione) {
     $logo = $institucione['logo'];
 }
 //////////////////////////traer datos institucion
-
+//echo APP_URL.'public/images/configuracion/'.$logo;
 // create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, array(215,280), true, 'UTF-8', false);
 
@@ -106,7 +106,9 @@ $html = '
 
 <table border="0">
 <tr>
-    <td width="150px" style="text-align: center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCKRbksr6RKlHAANNpk0EN0W22Ok-8JTdvcQ&usqp=CAU" width="80px" alt=""></td>
+    <td width="150px" style="text-align: center">
+        <img src="'.APP_URL.'public/images/configuracion/'.$logo.'" width="80px" alt="">
+    </td>
     <td width="410px"></td>     
 </tr>
 <tr>
@@ -188,6 +190,7 @@ con las normas y reglamentos internos.
 </p>
 
 ';
+
 
 // Print text using writeHTMLCell()
 $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);

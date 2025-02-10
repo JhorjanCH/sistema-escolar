@@ -68,7 +68,7 @@ include ('../../../admin/layout/parte1.php');
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <!--<div class="row">
+                        <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Logo de la institución</label>
@@ -77,7 +77,7 @@ include ('../../../admin/layout/parte1.php');
                                     <center><output id="list"></output></center>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>    
                 <div class="row">

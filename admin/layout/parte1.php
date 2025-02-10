@@ -158,7 +158,7 @@ $roles_permisos = $query_roles_permisos->fetchAll(PDO::FETCH_ASSOC);
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="<?=APP_URL;?>/admin" class="brand-link">
-        <img src="https://i.pinimg.com/originals/17/64/fb/1764fb2ffcbddfead48bddb89d735c09.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?=APP_URL;?>public/images/principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Bienvenido</span>
       </a>
 
@@ -167,7 +167,7 @@ $roles_permisos = $query_roles_permisos->fetchAll(PDO::FETCH_ASSOC);
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="public/image">
-            <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" class="img-circle elevation-2" alt="User Image">
+            <img src="<?=APP_URL;?>public/images/usuario.png" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block"><?=$nombre_sesion_usuario?></a>
