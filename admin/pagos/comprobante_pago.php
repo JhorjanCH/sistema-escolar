@@ -124,7 +124,8 @@ $html = '
 
 <table border="0">
 <tr>
-    <td width="150px" style="text-align: center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCKRbksr6RKlHAANNpk0EN0W22Ok-8JTdvcQ&usqp=CAU" width="80px" alt=""></td>
+    <td width="150px" style="text-align: center">
+    <img src="'.APP_URL.'public/images/configuracion/'.$logo.'" width="80px" alt=""></td>
     <td width="400px"></td>
     <td width="160px">
     <p>
