@@ -98,5 +98,7 @@ if($sentencia->execute()){
     $pdo->commit();
 }else{
     echo 'error al registrar a la base de datos';
-    ?><script>window.history.back();</script><?php
+    ?><script>
+window.history.back();
+</script><?php
 }

@@ -1,22 +1,23 @@
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
+  <!-- Control sidebar content goes here -->
+  <div class="p-3">
+    <h5>Title</h5>
+    <p>Sidebar content</p>
+  </div>
+</aside>
+<!-- /.control-sidebar -->
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      V 1.0.
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; <?=$ano_actual;?> <a href="#">INFORMÁTICA T2P2 AU EL TOQUITO</a></strong> All rights reserved.
-  </footer>
+<!-- Main Footer -->
+<footer class="main-footer">
+  <!-- To the right -->
+  <div class="float-right d-none d-sm-inline">
+    V 1.0.
+  </div>
+  <!-- Default to the left -->
+  <strong>Copyright &copy; <?=$ano_actual;?> <a href="#">INFORMÁTICA T2P2 AU EL TOQUITO</a></strong> All rights
+  reserved.
+</footer>
 </div>
 <!-- ./wrapper -->
 
@@ -43,4 +44,5 @@
 <!-- jQuery Knob -->
 <script src="<?=APP_URL;?>/public/plugins/jquery-knob/jquery.knob.min.js"></script>
 </body>
+
 </html>

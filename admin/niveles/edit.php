@@ -12,91 +12,98 @@ include ('../../app/controllers/niveles/datos_nivel.php');
 include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php');
 
 ?>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    
-    <!-- Main content -->
-    <br>
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <h1>Modificar Nivel: <?=$nivel;?></h1>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card card-outline card-success">
-                <div class="card-header">
-                  <h3 class="card-title">Formulario de datos</h3>
-                </div>
-              <div class="card-body">
-                <form action="<?=APP_URL;?>/app/controllers/niveles/update.php" method="post">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+  <!-- Main content -->
+  <br>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <h1>Modificar Nivel: <?=$nivel;?></h1>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-outline card-success">
+            <div class="card-header">
+              <h3 class="card-title">Formulario de datos</h3>
+            </div>
+            <div class="card-body">
+              <form action="<?=APP_URL;?>/app/controllers/niveles/update.php" method="post">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="">Gestión Educativa</label>
-                            <input type="text" name="id_nivel" value="<?=$id_nivel;?>" hidden>
-                            <select name="gestion_id" id="" class="form-control">
-                                <?php 
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="">Gestión Educativa</label>
+                      <input type="text" name="id_nivel" value="<?=$id_nivel;?>" hidden>
+                      <select name="gestion_id" id="" class="form-control">
+                        <?php 
                                 foreach ($gestiones as $gestione) { 
                                     if ($gestione['estado']=="1") { ?>
-                                        <option value="<?=$gestione['id_gestion'];?>"
-                                            <?php if($gestion_id==$gestione['id_gestion']) { ?> selected="selected" <?php } ?> >
-                                            <?=$gestione['gestion'];?>
-                                        </option>
-                                        <?php
-                                    } ?>    
-                                <?php    
+                        <option value="<?=$gestione['id_gestion'];?>"
+                          <?php if($gestion_id==$gestione['id_gestion']) { ?> selected="selected" <?php } ?>>
+                          <?=$gestione['gestion'];?>
+                        </option>
+                        <?php
+                                    } ?>
+                        <?php    
                                 }
                                 ?>
-                            </select>
-                        </div>  
+                      </select>
                     </div>
+                  </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="nivel">Niveles</label>
-                            <select name="nivel" id="" class="form-control">
-                                <option value="INICIAL" <?php if($nivel=='INICIAL') { ?> selected="selected" <?php } ?>>INICIAL</option>
-                                <option value="PRIMARIA" <?php if($nivel=='PRIMARIA') { ?> selected="selected" <?php } ?>>PRIMARIA</option>
-                                <option value="BÁSICA" <?php if($nivel=='BÁSICA') { ?> selected="selected" <?php } ?>>BÁSICA</option>
-                                <option value="DIVERSIFICADO" <?php if($nivel=='DIVERSIFICADO') { ?> selected="selected" <?php } ?>>DIVERSIFICADO</option>
-                            </select>
-                        </div>  
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="nivel">Niveles</label>
+                      <select name="nivel" id="" class="form-control">
+                        <option value="INICIAL" <?php if($nivel=='INICIAL') { ?> selected="selected" <?php } ?>>INICIAL
+                        </option>
+                        <option value="PRIMARIA" <?php if($nivel=='PRIMARIA') { ?> selected="selected" <?php } ?>>
+                          PRIMARIA</option>
+                        <option value="BÁSICA" <?php if($nivel=='BÁSICA') { ?> selected="selected" <?php } ?>>BÁSICA
+                        </option>
+                        <option value="DIVERSIFICADO" <?php if($nivel=='DIVERSIFICADO') { ?> selected="selected"
+                          <?php } ?>>DIVERSIFICADO</option>
+                      </select>
                     </div>
+                  </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="">Turnos</label>
-                            <select name="turno" id="" class="form-control">
-                                <option value="MAÑANA" <?php if($turno=='MAÑANA') { ?> selected="selected" <?php } ?>>MAÑANA</option>
-                                <option value="TARDE" <?php if($turno=='TARDE') { ?> selected="selected" <?php } ?>>TARDE</option>
-                                <option value="NOCHE" <?php if($turno=='NOCHE') { ?> selected="selected" <?php } ?>>NOCHE</option>
-                            </select>
-                        </div>  
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="">Turnos</label>
+                      <select name="turno" id="" class="form-control">
+                        <option value="MAÑANA" <?php if($turno=='MAÑANA') { ?> selected="selected" <?php } ?>>MAÑANA
+                        </option>
+                        <option value="TARDE" <?php if($turno=='TARDE') { ?> selected="selected" <?php } ?>>TARDE
+                        </option>
+                        <option value="NOCHE" <?php if($turno=='NOCHE') { ?> selected="selected" <?php } ?>>NOCHE
+                        </option>
+                      </select>
                     </div>
-                </div>        
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                             <button type="submit" class="btn btn-success">Actualizar</button>
-                             <a href="<?=APP_URL;?>/admin/niveles" class="btn btn-secondary">Cancelar</a>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-                </form>
-              </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-success">Actualizar</button>
+                      <a href="<?=APP_URL;?>/admin/niveles" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
   </div>
-  <!-- /.content-wrapper -->
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 <?php
 
 include ('../../admin/layout/parte2.php');

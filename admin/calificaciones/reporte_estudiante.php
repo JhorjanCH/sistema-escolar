@@ -28,32 +28,42 @@ foreach ($estudiantes as $estudiante){
 ?>
 
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    
-    <!-- Main content -->
-    <br>
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <h2>Calificaciones del estudiante:  <?=$apellidos." ".$nombres;?></h2>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-outline card-primary">
-              <div class="card-header">
-                  <h3 class="card-title">Calificaciones registradas</h3>
-              </div>
-              <div class="card-body">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+  <!-- Main content -->
+  <br>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <h2>Calificaciones del estudiante: <?=$apellidos." ".$nombres;?></h2>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-outline card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Calificaciones registradas</h3>
+            </div>
+            <div class="card-body">
               <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                 <thead>
                   <tr>
-                    <th><center>Nro</center></th>
-                    <th><center>Materia</center></th>
-                    <th><center>1er Lapso</center></th>
-                    <th><center>2do Lapso</center></th>
-                    <th><center>3er Lapso</center></th>
+                    <th>
+                      <center>Nro</center>
+                    </th>
+                    <th>
+                      <center>Materia</center>
+                    </th>
+                    <th>
+                      <center>1er Lapso</center>
+                    </th>
+                    <th>
+                      <center>2do Lapso</center>
+                    </th>
+                    <th>
+                      <center>3er Lapso</center>
+                    </th>
                 </thead>
                 <tbody>
                   <?php
@@ -65,85 +75,96 @@ foreach ($estudiantes as $estudiante){
 
                     if ($id_estudiante_get == $calificacione['estudiante_id']){
                       $contador_calificaciones = $contador_calificaciones +1; ?>
-                      <tr>        
-                        <td><center><?=$contador_calificaciones;?></center></td>
-                        <td><center><?=$calificacione['nombre_materia']?></center></td>
-                        <td><center><?=$calificacione['nota1']?></center></td>
-                        <td><center><?=$calificacione['nota2']?></center></td>
-                        <td><center><?=$calificacione['nota3']?></center></td>
-                      </tr>
-                        <?php
+                  <tr>
+                    <td>
+                      <center><?=$contador_calificaciones;?></center>
+                    </td>
+                    <td>
+                      <center><?=$calificacione['nombre_materia']?></center>
+                    </td>
+                    <td>
+                      <center><?=$calificacione['nota1']?></center>
+                    </td>
+                    <td>
+                      <center><?=$calificacione['nota2']?></center>
+                    </td>
+                    <td>
+                      <center><?=$calificacione['nota3']?></center>
+                    </td>
+                  </tr>
+                  <?php
                         }
                     }                    
                   ?>
                 </tbody>
               </table>
-              </div>
             </div>
           </div>
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
   </div>
-  <!-- /.content-wrapper -->
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 <?php
 
 include ('../../admin/layout/parte2.php');
 include ('../../layout/mensajes.php');
 
 ?>
- 
+
 <script>
-  $(function () {
-      $("#example1").DataTable({
-          "pageLength": 5,
-          "language": {
-          "emptyTable": "No hay información",
-          "info": "Mostrando _START_ a _END_ de _TOTAL_ Calificaciones",
-          "infoEmpty": "Mostrando 0 a 0 de 0 Calificaciones",
-          "infoFiltered": "(Filtrado de _MAX_ total Calificaciones)",
-          "infoPostFix": "",
-          "thousands": ",",
-          "lengthMenu": "Mostra _MENU_ Calificaciones",
-          "loadingRecords": "Cargando...",
-          "processing": "Procesando...",
-          "search": "Buscador:",
-          "zeroRecords": "Sin resultados encontrados",
-          "paginate": {
-              "first": "Primero",
-              "last": "Ultimo",
-              "next": "Siguiente",
-              "previous": "Anterior"
-          }
-        },
-        "responsive": true, "lengthChange": true, "autoWidth": false,
+$(function() {
+  $("#example1").DataTable({
+    "pageLength": 5,
+    "language": {
+      "emptyTable": "No hay información",
+      "info": "Mostrando _START_ a _END_ de _TOTAL_ Calificaciones",
+      "infoEmpty": "Mostrando 0 a 0 de 0 Calificaciones",
+      "infoFiltered": "(Filtrado de _MAX_ total Calificaciones)",
+      "infoPostFix": "",
+      "thousands": ",",
+      "lengthMenu": "Mostra _MENU_ Calificaciones",
+      "loadingRecords": "Cargando...",
+      "processing": "Procesando...",
+      "search": "Buscador:",
+      "zeroRecords": "Sin resultados encontrados",
+      "paginate": {
+        "first": "Primero",
+        "last": "Ultimo",
+        "next": "Siguiente",
+        "previous": "Anterior"
+      }
+    },
+    "responsive": true,
+    "lengthChange": true,
+    "autoWidth": false,
+    buttons: [{
+        extend: 'collection',
+        text: 'Reportes',
+        orientation: 'landscape',
         buttons: [{
-            extend: 'collection',
-            text: 'Reportes',
-            orientation: 'landscape',
-            buttons: [{
-                text: 'Copiar',
-                extend: 'copy'
-            },  {
-                extend: 'pdf'
-            }, {
-                extend: 'csv'
-            }, {
-                extend: 'excel'
-            }, {
-                text: 'Imprimir',
-                extend: 'print',
-            }
-            ]  
-        },
-            {
-                extend: 'colvis',
-                text: 'Visor de  columnas',
-                collectionLayout: 'fixed three-column'
-            }
-          ],
-      }).buttons(). container().appendTo('#example1_wrapper .col-md-6:eq(0)')
-  });
+          text: 'Copiar',
+          extend: 'copy'
+        }, {
+          extend: 'pdf'
+        }, {
+          extend: 'csv'
+        }, {
+          extend: 'excel'
+        }, {
+          text: 'Imprimir',
+          extend: 'print',
+        }]
+      },
+      {
+        extend: 'colvis',
+        text: 'Visor de  columnas',
+        collectionLayout: 'fixed three-column'
+      }
+    ],
+  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)')
+});
 </script>

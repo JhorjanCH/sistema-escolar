@@ -17,37 +17,47 @@ foreach ($kardexs as $kardex) {
 ?>
 
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    
-    <!-- Main content -->
-    <br>
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <h1>Listado de reportes Kardex</h1>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-outline card-info">
-              <div class="card-header">
-                  <h3 class="card-title">Reportes registrados</h3>
-              </div>
-              <div class="card-body">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+  <!-- Main content -->
+  <br>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <h1>Listado de reportes Kardex</h1>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-outline card-info">
+            <div class="card-header">
+              <h3 class="card-title">Reportes registrados</h3>
+            </div>
+            <div class="card-body">
               <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                 <thead>
                   <tr>
-                    <th><center>Nro</center></th>                    
-                    <th><center>Materia</center></th>
-                    <th><center>Fecha de reporte</center></th>
-                    <th><center>Observacion</center></th>
-                    <th><center>Nota</center></th>
+                    <th>
+                      <center>Nro</center>
+                    </th>
+                    <th>
+                      <center>Materia</center>
+                    </th>
+                    <th>
+                      <center>Fecha de reporte</center>
+                    </th>
+                    <th>
+                      <center>Observacion</center>
+                    </th>
+                    <th>
+                      <center>Nota</center>
+                    </th>
 
                   </tr>
                 </thead>
-                    <tbody>
-                        <?php
+                <tbody>
+                  <?php
                         $contador_reportes = 0;
                         foreach ($kardexs as $kardex) {
                           if($id_estudiante == $kardex['id_estudiante']){ 
@@ -57,85 +67,96 @@ foreach ($kardexs as $kardex) {
                               $observacion = $kardex['observacion'];  
                               $nota = $kardex['nota'];      
                               $contador_reportes = $contador_reportes +1; ?>
-                              <tr>
-                                  <td><center><?=$contador_reportes?></center></td>
-                                  <td><center><?=$nombre_materia?></center></td>
-                                  <td><center><?=$fecha?></center></td>
-                                  <td><center><?=$observacion?></center></td>
-                                  <td><center><?=$nota?></center></td>
-                              </tr>
-                        <?php
+                  <tr>
+                    <td>
+                      <center><?=$contador_reportes?></center>
+                    </td>
+                    <td>
+                      <center><?=$nombre_materia?></center>
+                    </td>
+                    <td>
+                      <center><?=$fecha?></center>
+                    </td>
+                    <td>
+                      <center><?=$observacion?></center>
+                    </td>
+                    <td>
+                      <center><?=$nota?></center>
+                    </td>
+                  </tr>
+                  <?php
                         }    
                         }
                         ?>
-                    </tbody>
+                </tbody>
               </table>
-              </div>
             </div>
           </div>
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
   </div>
-  <!-- /.content-wrapper -->
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 <?php
 
 include ('../../admin/layout/parte2.php');
 include ('../../layout/mensajes.php');
 
 ?>
- 
+
 <script>
-  $(function () {
-      $("#example1").DataTable({
-          "pageLength": 5,
-          "language": {
-          "emptyTable": "No hay información",
-          "info": "Mostrando _START_ a _END_ de _TOTAL_ Reportes",
-          "infoEmpty": "Mostrando 0 a 0 de 0 Reportes",
-          "infoFiltered": "(Filtrado de _MAX_ total Reportes)",
-          "infoPostFix": "",
-          "thousands": ",",
-          "lengthMenu": "Mostra _MENU_ Reportes",
-          "loadingRecords": "Cargando...",
-          "processing": "Procesando...",
-          "search": "Buscador:",
-          "zeroRecords": "Sin resultados encontrados",
-          "paginate": {
-              "first": "Primero",
-              "last": "Ultimo",
-              "next": "Siguiente",
-              "previous": "Anterior"
-          }
-        },
-        "responsive": true, "lengthChange": true, "autoWidth": false,
+$(function() {
+  $("#example1").DataTable({
+    "pageLength": 5,
+    "language": {
+      "emptyTable": "No hay información",
+      "info": "Mostrando _START_ a _END_ de _TOTAL_ Reportes",
+      "infoEmpty": "Mostrando 0 a 0 de 0 Reportes",
+      "infoFiltered": "(Filtrado de _MAX_ total Reportes)",
+      "infoPostFix": "",
+      "thousands": ",",
+      "lengthMenu": "Mostra _MENU_ Reportes",
+      "loadingRecords": "Cargando...",
+      "processing": "Procesando...",
+      "search": "Buscador:",
+      "zeroRecords": "Sin resultados encontrados",
+      "paginate": {
+        "first": "Primero",
+        "last": "Ultimo",
+        "next": "Siguiente",
+        "previous": "Anterior"
+      }
+    },
+    "responsive": true,
+    "lengthChange": true,
+    "autoWidth": false,
+    buttons: [{
+        extend: 'collection',
+        text: 'Reportes',
+        orientation: 'landscape',
         buttons: [{
-            extend: 'collection',
-            text: 'Reportes',
-            orientation: 'landscape',
-            buttons: [{
-                text: 'Copiar',
-                extend: 'copy'
-            },  {
-                extend: 'pdf'
-            }, {
-                extend: 'csv'
-            }, {
-                extend: 'excel'
-            }, {
-                text: 'Imprimir',
-                extend: 'print',
-            }
-            ]  
-        },
-            {
-                extend: 'colvis',
-                text: 'Visor de  columnas',
-                collectionLayout: 'fixed three-column'
-            }
-          ],
-      }).buttons(). container().appendTo('#example1_wrapper .col-md-6:eq(0)')
-  });
+          text: 'Copiar',
+          extend: 'copy'
+        }, {
+          extend: 'pdf'
+        }, {
+          extend: 'csv'
+        }, {
+          extend: 'excel'
+        }, {
+          text: 'Imprimir',
+          extend: 'print',
+        }]
+      },
+      {
+        extend: 'colvis',
+        text: 'Visor de  columnas',
+        collectionLayout: 'fixed three-column'
+      }
+    ],
+  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)')
+});
 </script>
