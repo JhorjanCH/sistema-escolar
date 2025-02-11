@@ -41,12 +41,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                         <!-- <a href="<?=APP_URL;?>/admin/roles/create.php" style="margin-left: 5px" class="btn btn-primary btn-sm"><i class="bi bi-file-plus"></i></a> -->
                                         <div class="form-group">
                                             <select name="rol_id" id="" class="form-control">
-                                                <?php
-                                                foreach ($roles as $role) { ?>
-                                                    <option value="<?=$role['id_rol'];?>" <?=$role['nombre_rol']== "ESTUDIANTE" ? 'selected' : ''?>><?=$role['nombre_rol'];?></option>
-                                                <?php
-                                                }
-                                                ?>
+                                              <option value="<?=$roles[6]['id_rol']; ?>"><?= $roles[6]['nombre_rol']; ?></option>
                                             </select>
                                         </div>
                                     </div>

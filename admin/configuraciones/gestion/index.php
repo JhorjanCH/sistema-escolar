@@ -79,7 +79,7 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                             class="bi bi-eye"></i></a>
                         <a href="edit.php?id=<?=$id_gestion;?>" type="button" class="btn btn-success btn-sm"><i
                             class="bi bi-pencil"></i></a>
-                        <form action="<?=APP_URL;?>/app/controllers/configuraciones/institucion/delete.php"
+                        <form action="<?=APP_URL;?>/app/controllers/configuraciones/gestion/delete.php"
                           onclick="preguntar<?=$id_gestion;?>(event)" method="post" id="miformulario<?=$id_gestion;?>">
                           <input type="text" name="id_gestion" value="<?=$id_gestion;?>" hidden>
                           <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 4px 4px 0px;"><i

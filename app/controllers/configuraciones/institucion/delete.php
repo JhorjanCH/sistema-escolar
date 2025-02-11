@@ -8,11 +8,11 @@
 
 include ('../../../../app/config.php');
 
-$id_gestion = $_POST['id_gestion'];
+$id_config_institucion = $_POST['id_config_institucion'];
 
-$sentencia = $pdo->prepare("DELETE FROM gestiones WHERE id_gestion=:id_gestion");
+$sentencia = $pdo->prepare("DELETE FROM configuracion_instituciones WHERE id_config_institucion=:id_config_institucion");
 
-$sentencia->bindParam('id_gestion', $id_gestion);
+$sentencia->bindParam('id_config_institucion', $id_config_institucion);
 
 try {
     if($sentencia->execute()){
