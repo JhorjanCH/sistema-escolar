@@ -5,7 +5,7 @@
  * Date: 10/10/2024
  * Time: 7:32am
  */
-include ('app/config.php');
+include ('./app/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
